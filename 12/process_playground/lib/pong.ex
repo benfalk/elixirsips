@@ -3,7 +3,7 @@ defmodule Pong do
     await(0)
   end
 
-  def await do
+  def await(count) do
     receive do
       {:ping, pid} -> send pid, {:pong, self}
     end
